@@ -1,0 +1,113 @@
+@mixin flex($justify,$align){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin width-height($width,$height){
+    width: $width;
+    height: $height;
+}
+
+@mixin hoverEffectText(){
+    &:hover{
+        color: orange;
+    }
+}
+
+@mixin hoverEffectBox($bgColor,$oclor){
+    &:hover{
+        background-color: $bgColor ;
+        color: $oclor;
+    }
+}
+
+@mixin transitionEffect(){
+    cursor: pointer;
+    transition: all 0.6s;
+}
+
+@mixin btnStyle () {
+    text-decoration: none;
+    color: $elementaryColor;
+    border: solid 1px $elementaryColor;
+    border-radius: 2rem;
+    padding: 0.6rem 1rem;
+}
+
+@mixin titleStyle(){
+    background-color: $elementaryColor;
+    color: $lightColor;
+    padding: 0.6rem;
+    border-radius: 2rem;
+}
+
+@mixin littleTitle($left,$right,$margin){
+    color: $elementaryColor;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after{
+        content: '';
+        display: inline-block;
+        width: 60px;
+        height: 2px;
+        background-color: $elementaryColor;
+        position: absolute;
+        left: $left;
+        right: $right;
+        bottom: -80px;
+        margin: $margin;
+    }
+}
+
+@mixin largTitle(){
+    font-size: 34px;
+    margin-bottom: 4rem;
+    span{
+        color: $elementaryColor; 
+    }
+}
+
+@mixin boxShadow(){
+    box-shadow: 0 0 14px 0 lightgray;
+}
+
+@mixin media($size){
+    @if ($size == XXL){
+        @media screen and (max-width:1400px) {
+            .container{
+                max-width: 1140px;
+            }
+            @content;
+        }
+    } @else if ($size == XL){
+        @media screen and (max-width:1200px) {
+            .container{
+                max-width: 960px;
+            }
+            @content;
+        }
+    } @else if ($size == L){
+        @media screen and (max-width:992px) {
+            .container{
+                max-width: 720px;
+            }
+            @content;
+        }
+    } @else if ($size == M){
+        @media screen and (max-width:768px) {
+            .container{
+                max-width: 540px;
+            }
+            @content;
+        }
+    } @else if ($size == S){
+        @media screen and (max-width:578px) {
+            .container{
+                width: 100%;
+            }
+            @content;
+        }
+    }
+}
