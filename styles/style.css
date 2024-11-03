@@ -190,7 +190,7 @@ body {
   color: #fe664e;
   border: solid 1px #fe664e;
   border-radius: 2rem;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 1.6rem;
   cursor: pointer;
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
@@ -263,7 +263,7 @@ main .main-banner-sect .main-banner .banner-content .banner-content-btn {
   color: #fe664e;
   border: solid 1px #fe664e;
   border-radius: 2rem;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 1.6rem;
   cursor: pointer;
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
@@ -495,7 +495,7 @@ main .ourservices-sect .services-wraper .services {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1rem;
+  gap: 1.6rem;
   margin-top: 6rem;
 }
 
@@ -506,6 +506,8 @@ main .ourservices-sect .services-wraper .services .service-box {
   width: calc(20% - 12px);
   padding: 1.8rem 1rem;
   border-radius: 0.8rem;
+  -webkit-transition: all .4s;
+  transition: all .4s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -519,6 +521,11 @@ main .ourservices-sect .services-wraper .services .service-box {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+main .ourservices-sect .services-wraper .services .service-box:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 main .ourservices-sect .services-wraper .services .service-box .service-img {
@@ -649,32 +656,47 @@ main .quote-sect .section-largtitle span {
 
 main .quote-sect .quote-inp-container {
   max-width: 46rem;
-  height: 80px;
+  height: 60px;
   background-color: #fff;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem 1rem 1rem 2rem;
+  gap: 1.8rem;
+  padding: 0 1rem 0 1.8rem;
   border-radius: 4rem;
   overflow: hidden;
+  position: relative;
   font-size: 16px;
 }
 
 main .quote-sect .quote-inp-container input {
   border: none;
   outline: none;
-  padding: 0.8rem;
+  padding: 0.4rem;
   border-bottom: solid 1px lightgray;
   color: #afafaf;
+  letter-spacing: 1px;
   width: 30%;
   height: auto;
+}
+
+main .quote-sect .quote-inp-container input:focus {
+  border-color: #fe664e !important;
+}
+
+main .quote-sect .quote-inp-container input:placeholder-shown {
+  border-color: lightgray;
+}
+
+main .quote-sect .quote-inp-container input:not(:placeholder-shown) {
+  border-color: #fe664e !important;
 }
 
 main .quote-sect .quote-btn {
@@ -683,10 +705,9 @@ main .quote-sect .quote-btn {
   background-color: #fe664e;
   color: #fff;
   width: 30%;
-  height: 80px;
-  margin-left: 1rem;
-  position: relative;
-  left: 18px;
+  height: 100%;
+  position: absolute;
+  right: 0;
   -webkit-transition: all .6s;
   transition: all .6s;
 }
@@ -762,12 +783,19 @@ main .portfolio-sect .portfolios .portfolio-item {
   -webkit-box-shadow: 0 0 14px 0 lightgray;
           box-shadow: 0 0 14px 0 lightgray;
   width: calc(20% - 12px);
-  border-radius: 2rem;
+  border-radius: 2.6rem;
   overflow: hidden;
   background-color: #fff;
+  -webkit-transition: all .4s;
+  transition: all .4s;
   cursor: pointer;
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
+}
+
+main .portfolio-sect .portfolios .portfolio-item:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 main .portfolio-sect .portfolios .portfolio-item img {
@@ -969,7 +997,7 @@ main .recentnews-sect .recentnews .recentnews-left .recentnews-content .recentne
   color: #fe664e;
   border: solid 1px #fe664e;
   border-radius: 2rem;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 1.6rem;
   cursor: pointer;
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
@@ -1188,7 +1216,21 @@ main .contactus-sect .contactus .contactus-form .form-inp input {
   padding: 0.8rem 0.7rem 0.7rem 1rem;
   border-radius: 2rem;
   border: solid 1px lightgray;
+  -webkit-transition: all .3s;
+  transition: all .3s;
   outline: none;
+}
+
+main .contactus-sect .contactus .contactus-form .form-inp input:focus {
+  border-color: #fe664e !important;
+}
+
+main .contactus-sect .contactus .contactus-form .form-inp input:placeholder-shown {
+  border-color: lightgray;
+}
+
+main .contactus-sect .contactus .contactus-form .form-inp input:not(:placeholder-shown) {
+  border-color: #fe664e !important;
 }
 
 main .contactus-sect .contactus .contactus-form .form-textarea {
@@ -1206,6 +1248,18 @@ main .contactus-sect .contactus .contactus-form .form-textarea textarea {
   padding: 0.5rem;
 }
 
+main .contactus-sect .contactus .contactus-form .form-textarea textarea:focus {
+  border-color: #fe664e !important;
+}
+
+main .contactus-sect .contactus .contactus-form .form-textarea textarea:placeholder-shown {
+  border-color: lightgray;
+}
+
+main .contactus-sect .contactus .contactus-form .form-textarea textarea:not(:placeholder-shown) {
+  border-color: #fe664e !important;
+}
+
 main .contactus-sect .contactus .contactus-form .form-btn {
   width: 30rem;
   height: auto;
@@ -1215,9 +1269,9 @@ main .contactus-sect .contactus .contactus-form .form-btn {
   color: #fe664e;
   border: solid 1px #fe664e;
   border-radius: 2rem;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 1.6rem;
   background-color: #fff;
-  padding: 1.4rem;
+  padding: 1rem 1.4rem;
   cursor: pointer;
   -webkit-transition: all 0.6s;
   transition: all 0.6s;

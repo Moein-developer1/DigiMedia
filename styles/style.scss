@@ -310,18 +310,23 @@ main{
             margin: 0 auto;
             .services{
                 @include flex(center,center);
-                gap: 1rem;
+                gap: 1.6rem;
                 margin-top: 6rem;
-    
+                
                 .service-box{
                     background-color: $lightColor;
                     @include boxShadow();
                     width: calc(20% - 12px);
                     padding: 1.8rem 1rem;
                     border-radius: 0.8rem;
+                    transition: all .4s;
                     @include flex(center,center);
                     flex-direction: column;
                 
+                    &:hover{
+                        transform: translateY(-10px);
+                    }
+
                     .service-img{
                         margin-bottom: 1rem;
                     }
@@ -412,22 +417,37 @@ main{
 
         .quote-inp-container{
             max-width: 46rem;
-            height: 80px;
+            height: 60px;
             background-color: #fff;
             margin: 0 auto;
-            @include flex(space-between,center);
-            padding: 1rem 1rem 1rem 2rem;
+            @include flex(start,center);
+            gap: 1.8rem;
+            padding: 0 1rem 0 1.8rem;
             border-radius: 4rem;
             overflow: hidden;
+            position: relative;
             font-size: 16px;
             
             input{
                 border: none;
                 outline: none;
-                padding: 0.8rem;
+                padding: 0.4rem;
                 border-bottom: solid 1px lightgray;
                 color: $textColor1;
+                letter-spacing: 1px;
                 @include width-height(30%,auto);
+            
+                &:focus{
+                    border-color: #fe664e !important;
+                }
+
+                &:placeholder-shown{
+                    border-color: lightgray;
+                }
+
+                &:not(:placeholder-shown){
+                    border-color: #fe664e !important;
+                }
             }
         }
 
@@ -438,10 +458,9 @@ main{
             outline: none;
             background-color: $elementaryColor;
             color: $lightColor;
-            @include width-height(30%,80px);
-            margin-left: 1rem;
-            position: relative;
-            left: 18px;
+            @include width-height(30%,100%);
+            position: absolute;
+            right: 0;
             transition: all .6s;
 
             &:hover{
@@ -486,10 +505,15 @@ main{
             .portfolio-item{
                 @include boxShadow();
                 width: calc(20% - 12px);
-                border-radius: 2rem;
+                border-radius: 2.6rem;
                 overflow: hidden;
                 background-color: $lightColor;
+                transition: all .4s;
                 @include transitionEffect();
+
+                &:hover{
+                    transform:translateY(-10px);
+                }
 
                 img{
                     width: 100%;
@@ -774,8 +798,20 @@ main{
                         padding: 0.8rem 0.7rem 0.7rem 1rem;
                         border-radius: 2rem;
                         border: solid 1px lightgray;
+                        transition: all .3s;
                         outline: none;
 
+                        &:focus{
+                            border-color: #fe664e !important;
+                        }
+        
+                        &:placeholder-shown{
+                            border-color: lightgray;
+                        }
+        
+                        &:not(:placeholder-shown){
+                            border-color: #fe664e !important;
+                        }
                     }
                 }
                 
@@ -790,6 +826,17 @@ main{
                         border-radius:1rem;
                         padding:0.5rem;                        
 
+                        &:focus{
+                            border-color: #fe664e !important;
+                        }
+        
+                        &:placeholder-shown{
+                            border-color: lightgray;
+                        }
+        
+                        &:not(:placeholder-shown){
+                            border-color: #fe664e !important;
+                        }
                     }
                 }
 
@@ -799,7 +846,7 @@ main{
                     border:none;
                     @include btnStyle();
                     background-color:$lightColor;
-                    padding:1.4rem;
+                    padding:1rem 1.4rem;
                     @include hoverEffectBox($elementaryColor,$lightColor);
                     @include transitionEffect();
                 }
